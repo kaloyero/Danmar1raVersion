@@ -42,8 +42,10 @@ public class UserServiceImpl implements UserDetailsService,UserService {
 	// Convierto User propio a org.springframework.security.core.userdetails.User
 	private User buildUserForAuthentication(com.facturador.danmar.model.User user, 
 		List<GrantedAuthority> authorities) {
+//		return new User(user.getUsername(), user.getPassword(), 
+//			user.isEnabled(), true, true, true, authorities);
 		return new User(user.getUsername(), user.getPassword(), 
-			user.isEnabled(), true, true, true, authorities);
+			true, true, true, true, authorities);
 	}
 
 	private List<GrantedAuthority> buildUserAuthority(Set<UserRole> userRoles) {
