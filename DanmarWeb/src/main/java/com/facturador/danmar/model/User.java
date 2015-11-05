@@ -17,7 +17,7 @@ public class User {
 
 	private String username;
 	private String password;
-	private boolean enabled;
+//	private boolean enabled;
 	private Set<UserRole> userRole = new HashSet<UserRole>(0);
 
 	public User() {
@@ -26,14 +26,14 @@ public class User {
 	public User(String username, String password, boolean enabled) {
 		this.username = username;
 		this.password = password;
-		this.enabled = enabled;
+//		this.enabled = enabled;
 	}
 
 	public User(String username, String password, 
 		boolean enabled, Set<UserRole> userRole) {
 		this.username = username;
 		this.password = password;
-		this.enabled = enabled;
+//		this.enabled = enabled;
 		this.userRole = userRole;
 	}
 
@@ -58,14 +58,14 @@ public class User {
 		this.password = password;
 	}
 
-	@Column(name = "enabled", nullable = false)
-	public boolean isEnabled() {
-		return this.enabled;
-	}
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
+//	@Column(name = "enabled", nullable = false)
+//	public boolean isEnabled() {
+//		return this.enabled;
+//	}
+//
+//	public void setEnabled(boolean enabled) {
+//		this.enabled = enabled;
+//	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	public Set<UserRole> getUserRole() {

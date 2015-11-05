@@ -30,6 +30,7 @@ public class ConexionDB {
          //obtenemos el driver para Access 
          Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
          //obtenemos la conexión         
+         System.out.println("Db connect: " + url);
          conn = DriverManager.getConnection(url);
          //si la conexion tuvo exito
          if (conn!=null){
