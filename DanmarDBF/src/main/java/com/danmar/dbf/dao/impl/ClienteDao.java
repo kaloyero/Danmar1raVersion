@@ -1,13 +1,14 @@
-package com.danmar.dbf.dao;
+package com.danmar.dbf.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.danmar.dbf.dao.PaginacionDao;
 import com.danmar.dbf.dto.ClienteDto;
 
 public class ClienteDao extends GenericDao<ClienteDto> implements
-		IPaginacionDao<ClienteDto> {
+		PaginacionDao<ClienteDto> {
 
 	public static final String TABLA_NOMBRE = "clientes";
 
@@ -41,13 +42,16 @@ public class ClienteDao extends GenericDao<ClienteDto> implements
 	public static final String CAMPO_DOMFISCAL = "domfiscal";
 	public static final String CAMPO_RET_IB = "ret_ib";
 
+	public static final String DEFAULT_ORDER_BY	 = "numero";
+
+	
 	/**
 	 * Se ejecuta la clase de consulta
 	 */
 	public static void main(String[] args) {
 
 		ClienteDao access = new ClienteDao();
-		access.getAll();
+		access.getAll(1, 5);
 	}
 
 	public List<ClienteDto> getAll(int pagina, int cantRegistros) {
@@ -91,7 +95,7 @@ public class ClienteDao extends GenericDao<ClienteDto> implements
 		cliente.setUltimoPago(res.getDouble(CAMPO_ULTIMOPAGO));
 		cliente.setVarios(res.getString(CAMPO_VARIOS));
 		cliente.setVendedor(res.getInt(CAMPO_VENDEDOR));
-
+	//	System.out.println(cliente.getCodigo()+ " - " + cliente.getNombre());
 		return cliente;
 	}
 
@@ -104,6 +108,11 @@ public class ClienteDao extends GenericDao<ClienteDto> implements
 		ClienteDto dto = super.getByIdQry(CAMPO_NUMERO + " =  " + numero + " ");
 
 		return dto;
+	}
+
+	@Override
+	protected String getDefaultOrderBy() {
+		return DEFAULT_ORDER_BY;
 	}
 
 }

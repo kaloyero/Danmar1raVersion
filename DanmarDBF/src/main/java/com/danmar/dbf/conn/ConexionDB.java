@@ -7,18 +7,16 @@ import java.sql.SQLException;
 public class ConexionDB {
 
     //contrase�a a la base de datos si es que tuviera, si no se deja vacio
-   private static final String password = "";
+//   private static final String bdPwd = Configuration.getInstance().getProperty(Configuration.DB_PWD);
    //nombre de la base de datos Acces con extension *.mdb o *.accdb
-   public static final String dbName = "DanmarDB.accdb";
-
-   //private static final String dbPath = System.getProperty("user.dir") ;
-   //private static final String dbPath = "C:\\wsPruebas\\DanmarDBF\\bd\\";
-   private static final String dbPath = System.getProperty("user.dir")+ "\\bd"  ;
+   public static final String dbName = Configuration.getInstance().getProperty(Configuration.DB_NAME)  ;
+   private static final String dbPath = Configuration.getInstance().getProperty(Configuration.DB_PATH)  ;
    //direccion de la base de datos
-   //private static final String dbPathName = dbPath + "\\" + dbName + ";PWD=" + password;
    private static final String dbPathName = dbPath + "\\" + dbName + ";";
    //driver para base de datos Access 2000, 2003, 2007, 2010
    private static final String url = "jdbc:odbc:;DRIVER=Microsoft Access Driver (*.mdb, *.accdb);DBQ=" + dbPathName;
+   
+   private static final String driver = "sun.jdbc.odbc.JdbcOdbcDriver";
    
    private static Connection conn = null;
 	
@@ -28,7 +26,7 @@ public class ConexionDB {
     public static void conectar() {
       try{
          //obtenemos el driver para Access 
-         Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+         Class.forName(driver);
          //obtenemos la conexión         
          System.out.println("Db connect: " + url);
          conn = DriverManager.getConnection(url);

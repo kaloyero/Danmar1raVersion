@@ -1,4 +1,4 @@
-package com.danmar.dbf.dao;
+package com.danmar.dbf.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +13,8 @@ public class TarjetaDao extends GenericDao<TarjetaDto>{
 	public static final String CAMPO_CUOTAS		 = "cuotas";
 	public static final String CAMPO_COEFICIEN	 	 = "coeficien";
 
-
+	public static final String DEFAULT_ORDER_BY	 = "tarjeta";
+	
    /**
     * Se ejecuta la clase de consulta
     */
@@ -55,4 +56,10 @@ public class TarjetaDao extends GenericDao<TarjetaDto>{
 		
 		return dto;
 	}
+	
+	@Override
+	protected String getDefaultOrderBy() {
+		return DEFAULT_ORDER_BY;
+	}
+
 }

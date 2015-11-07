@@ -8,10 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -68,9 +70,21 @@ public class DummyPostaController implements IDummyController{
 		return articuloManager.getAll(pagina, cantRegistros);
 	}
 	
-	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody  String nombre,@RequestBody  Integer pagina,@RequestBody  Integer cantRegistros) {
+	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestParam  String nombre,@RequestParam  Integer pagina,@RequestParam  Integer cantRegistros) {
 		return articuloManager.searchByNombre(nombre, pagina, cantRegistros);
 	}
+	
+	@RequestMapping(value = "/articulo/probar/", method = RequestMethod.POST)
+	public @ResponseBody String prueba1(@ModelAttribute("nombre") String nombre) {
+		return "OK1";
+	}
+
+	@RequestMapping(value = "/articulo/probar2/", method = RequestMethod.GET)
+	public @ResponseBody String prueba2()
+	{
+		return "OK2";
+	}
+
 
 	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody FiltroArticulo filtro,@RequestBody Integer pagina,@RequestBody Integer cantRegistros) throws ParseException{
 		return articuloManager.searchByFiltros(filtro, pagina, cantRegistros);

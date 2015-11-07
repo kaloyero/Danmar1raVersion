@@ -1,13 +1,14 @@
-package com.danmar.dbf.dao;
+package com.danmar.dbf.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.danmar.dbf.dao.PaginacionDao;
 import com.danmar.dbf.dto.ArticuloDto;
 import com.danmar.dbf.dto.filtro.FiltroArticulo;
 
-public class ArticuloDao extends GenericDao<ArticuloDto> implements IPaginacionDao<ArticuloDto>{
+public class ArticuloDao extends GenericDao<ArticuloDto> implements PaginacionDao<ArticuloDto>{
 	
 	public static final String TABLA_NOMBRE		 = "stock";
 	
@@ -54,6 +55,9 @@ public class ArticuloDao extends GenericDao<ArticuloDto> implements IPaginacionD
 	public static final String CAMPO_FVARMAY	 = "fvarmay";
 	public static final String CAMPO_VISIBLE	 = "visible";
 
+	public static final String DEFAULT_ORDER_BY	 = "articulo";
+
+	
    /**
     * Se ejecuta la clase de consulta
     */
@@ -67,7 +71,7 @@ public class ArticuloDao extends GenericDao<ArticuloDto> implements IPaginacionD
     	filtro.setCc2("23");
     	filtro.setCc3("0710");
     	filtro.setTipo("01");
-    	access.searchByFiltros(filtro,0,0);
+    	access.searchByFiltros(filtro,1,5);
     	
     	access.getById("Solen.Arr.Indiel Chev.C-20");
 
@@ -79,12 +83,7 @@ public class ArticuloDao extends GenericDao<ArticuloDto> implements IPaginacionD
 		return TABLA_NOMBRE;
 	}
 	
-	    
-	/**
-	 * @param pagina Pagina a mostrar. Comienza en 1.
-	 * @param cantRegistros cantidad de registros que muestra
-	 * @return
-	 */
+
 	public List<ArticuloDto> getAll(int pagina, int cantRegistros) {
 		return super.getAll(pagina, cantRegistros);
 	}   
@@ -166,4 +165,12 @@ public class ArticuloDao extends GenericDao<ArticuloDto> implements IPaginacionD
 		
 		return super.getAll(pagina,  cantRegistros,whereClause.toString());
 	}
+
+	@Override
+	protected String getDefaultOrderBy() {
+		return DEFAULT_ORDER_BY;
+	}
+
+
+	
 }

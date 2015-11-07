@@ -2,7 +2,7 @@ package com.danmar.dbf.service.impl;
 
 import java.util.List;
 
-import com.danmar.dbf.dao.TarjetaDao;
+import com.danmar.dbf.dao.impl.TarjetaDao;
 import com.danmar.dbf.dto.TarjetaDto;
 import com.danmar.dbf.service.TarjetaService;
 

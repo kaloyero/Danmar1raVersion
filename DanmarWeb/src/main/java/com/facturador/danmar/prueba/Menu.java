@@ -1,6 +1,6 @@
 package com.facturador.danmar.prueba;
 
-import com.danmar.dbf.dao.ClienteDao;
+import com.danmar.dbf.dao.impl.ClienteDao;
 
 
 public class Menu {

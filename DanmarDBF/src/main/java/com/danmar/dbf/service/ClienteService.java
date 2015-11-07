@@ -4,10 +4,8 @@ import java.util.List;
 
 import com.danmar.dbf.dto.ClienteDto;
 
-public interface ClienteService {
+public interface ClienteService extends PaginacionService<ClienteDto>{
 
-	List<ClienteDto> getAll(int pagina, int cantRegistros);
-	
 	List<ClienteDto> getAll(); 
 
 	public ClienteDto getById(int numero);
