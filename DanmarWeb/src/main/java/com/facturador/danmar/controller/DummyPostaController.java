@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.danmar.dbf.dto.filtro.FiltroArticulo;
+import com.danmar.dbf.dto.filtro.FiltroCliente;
+import com.danmar.dbf.dto.filtro.Paginacion;
 import com.facturador.danmar.common.ErrorRespuestaBean;
 import com.facturador.danmar.form.ArticuloForm;
 import com.facturador.danmar.form.ClienteForm;
@@ -50,15 +51,13 @@ public class DummyPostaController implements IDummyController{
 	}
 
 	@Override
-	public List<ClienteForm> findAllClientes(Integer pagina,
-			Integer cantRegistros) {
+	public @ResponseBody	List<ClienteForm> findAllClientes(@RequestBody Integer pagina){
 		return clienteManager.getAll();
 	}
 
 
 	@Override
-	public List<ClienteForm> searchClientesByFiltro(String filtro,
-			Integer pagina, Integer cantRegistros) {
+	public @ResponseBody List<ClienteForm> searchClientesByFiltro(@RequestBody FiltroCliente pagina) {
 		return clienteManager.getAll();
 	}
 	
@@ -70,8 +69,8 @@ public class DummyPostaController implements IDummyController{
 		return articuloManager.getAll(pagina, cantRegistros);
 	}
 	
-	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestParam  String nombre,@RequestParam  Integer pagina,@RequestParam  Integer cantRegistros) {
-		return articuloManager.searchByNombre(nombre, pagina, cantRegistros);
+	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody  String nombre,@RequestBody  Paginacion pagina){
+		return articuloManager.searchByNombre(nombre, pagina.getPagina(), pagina.getCantRegistros());
 	}
 	
 	@RequestMapping(value = "/articulo/probar/", method = RequestMethod.POST)
@@ -86,8 +85,8 @@ public class DummyPostaController implements IDummyController{
 	}
 
 
-	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody FiltroArticulo filtro,@RequestBody Integer pagina,@RequestBody Integer cantRegistros) throws ParseException{
-		return articuloManager.searchByFiltros(filtro, pagina, cantRegistros);
+	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody FiltroArticulo filtro) throws ParseException{
+		return articuloManager.searchByFiltros(filtro, filtro.getPagina(), filtro.getCantRegistros());
 	}
 
 	
@@ -108,6 +107,11 @@ public class DummyPostaController implements IDummyController{
 		
 		documentoEncabezadoManager.save(form);
 		return ("OK");
+	}
+
+	@Override
+	public List<ClienteForm> searchClientesByField(Paginacion pagina) {
+		return clienteManager.getAll();
 	}
 
 
