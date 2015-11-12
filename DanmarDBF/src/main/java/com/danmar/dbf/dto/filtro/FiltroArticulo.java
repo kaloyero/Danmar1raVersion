@@ -44,6 +44,8 @@ public class FiltroArticulo {
 //	private String 	fVarmin	;
 //	private String fVarmay;
 //	private String 	visible;
+	private String 	start;
+	private String 	end;
 	
 	public String getCc1() {
 		return cc1;
@@ -74,6 +76,18 @@ public class FiltroArticulo {
 	}
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+	public String getStart() {
+		return start;
+	}
+	public void setStart(String start) {
+		this.start = start;
+	}
+	public String getEnd() {
+		return end;
+	}
+	public void setEnd(String end) {
+		this.end = end;
 	}
 
 
