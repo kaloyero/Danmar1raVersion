@@ -71,7 +71,9 @@ public class ArticuloDao extends GenericDao<ArticuloDto> implements PaginacionDa
     	filtro.setCc2("23");
     	filtro.setCc3("0710");
     	filtro.setTipo("01");
-    	access.searchByFiltros(filtro,1,5);
+    	System.out.println("Empieza");
+    	access.searchByFiltros(filtro,1000,50);
+    	System.out.println("Termina");
     	
     	access.getById("Solen.Arr.Indiel Chev.C-20");
 

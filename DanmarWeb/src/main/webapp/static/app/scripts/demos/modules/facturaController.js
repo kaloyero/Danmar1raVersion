@@ -111,9 +111,13 @@ angular
 
                     var start = params.startRow + 1;
                     $.ajax({
-                        type: 'GET',
+                        type: 'POST',
+                        url:'http://localhost:8080/DanmarWeb/articulo/searchByFiltros',
+                        contentType : "application/json",
+            			data :  JSON.stringify(getFiltroBusqueda(params.startRow,params.endRow)),
+            		    dataType: 'json',
 
-                        url: 'http://localhost:8080/DanmarWeb/articulo/findAll/' + start + '/' + params.endRow,
+                       // url: 'http://localhost:8080/DanmarWeb/articulo/findAll/' + start + '/' + params.endRow,
 
                         success: function(data) {
                             resultadoBusqueda = JSON.parse(angular.toJson(data))
@@ -141,8 +145,10 @@ angular
                     var start = params.startRow + 1;
                     $.ajax({
                         type: 'GET',
-                        url: 'http://localhost:8080/DanmarWeb/cliente/findAll/' + start + '/' + params.endRow,
-
+                         url: 'http://localhost:8080/DanmarWeb/cliente/findAll/' + start + '/' + params.endRow,
+                        //url:'http://localhost:8080/DanmarWeb/articulo/searchByFiltros',
+                        //contentType : "application/json",
+            			//data : getFiltroBusqueda(start,params.endRow),
                         success: function(data) {
                             resultadoBusqueda = JSON.parse(angular.toJson(data))
                             var rowsThisPage = resultadoBusqueda.slice(params.startRow, params.endRow);
@@ -317,10 +323,10 @@ angular
             var filtro = new Object();
             filtro.cc1 = $scope.codigo1;
             filtro.cc2 = $scope.codigo2;
-            //filtro.cc3=$scope.codigo3;
-            filtro.cc3 = start + 1;
+            filtro.cc3=$scope.codigo3;
+            filtro.pagina = start + 1;
             filtro.articulo = $scope.articulo;
-            filtro.tipo = end;
+            filtro.cantRegistros = end;
             return filtro;
         }
 
