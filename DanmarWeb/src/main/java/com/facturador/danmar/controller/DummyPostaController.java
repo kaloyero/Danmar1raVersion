@@ -44,6 +44,11 @@ public class DummyPostaController implements IDummyController{
 	@Autowired
 	DocumentoEncabezadoManager documentoEncabezadoManager;
 	
+	@RequestMapping("/inicio")
+	public ModelAndView getIndex(){
+		return new ModelAndView("index");
+	}
+	
 	@RequestMapping("/Probando")
 	public ModelAndView getVersion(){
 		return new ModelAndView("version");
@@ -86,8 +91,10 @@ public class DummyPostaController implements IDummyController{
 	}
 
 
-	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody FiltroArticulo filtro,@RequestBody Integer pagina,@RequestBody Integer cantRegistros) throws ParseException{
-		return articuloManager.searchByFiltros(filtro, pagina, cantRegistros);
+	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody FiltroArticulo filtro) throws ParseException{
+		//return articuloManager.searchByFiltros(filtro, pagina, cantRegistros);
+		return articuloManager.searchByFiltros(filtro, Integer.parseInt(filtro.getTipo()), Integer.parseInt(filtro.getCc3()));
+
 	}
 
 	

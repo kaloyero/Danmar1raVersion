@@ -40,7 +40,7 @@ public interface IDummyController {
 	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody  String nombre,@RequestBody  Integer pagina,@RequestBody  Integer cantRegistros);
 
 	@RequestMapping(value = "/articulo/searchByFiltros", method = RequestMethod.POST)
-	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody FiltroArticulo filtro,@RequestBody Integer pagina,@RequestBody Integer cantRegistros) throws ParseException;
+	public @ResponseBody List<ArticuloForm> searchArticulosByFiltro(@RequestBody FiltroArticulo filtros) throws ParseException;
 
 	@RequestMapping(value = "/articulo/getById/{nombre}", method = RequestMethod.GET)
 	public @ResponseBody ArticuloForm getArticuloById(@PathVariable String nombre) ;

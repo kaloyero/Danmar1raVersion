@@ -1,0 +1,132 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.danmar.dbf:DanmarDBF:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.systemPath' for csvjdbc-1.0-26:csvjdbc-1.0-26:jar should not point at files within the project directory, ${basedir}\lib\csvjdbc-1.0-26.jar will be unresolvable by dependent projects @ line 42, column 16
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.danmar.web:DanmarWeb:war:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: javax.servlet:servlet-api:jar -> version 2.5 vs ${servletapi.version} @ line 170, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Danmar Parent
+[INFO] DanmarDBF
+[INFO] DanmarWeb Maven Webapp
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Danmar Parent 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ danmar-parent ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ danmar-parent ---
+[INFO] Installing C:\Danmar\pom.xml to C:\Users\Silvina\.m2\repository\com\danmar\danmar-parent\1.0.0-SNAPSHOT\danmar-parent-1.0.0-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building DanmarDBF 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for com.danmar.dbf:dans-dbf-lib:jar:1.0.0-SNAPSHOT is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ DanmarDBF ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ DanmarDBF ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Danmar\DanmarDBF\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ DanmarDBF ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.pom (865 B at 0.2 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.2/plexus-compiler-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.2/plexus-compiler-2.2.pom (4 KB at 8.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.pom (690 B at 1.4 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.pom (769 B at 1.8 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.2/plexus-compilers-2.2.pom
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.2/plexus-compilers-2.2.pom (2 KB at 2.5 KB/sec)
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.jar
+[INFO] Downloading: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.2/plexus-compiler-manager-2.2.jar (5 KB at 4.8 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.2/plexus-compiler-javac-2.2.jar (19 KB at 16.4 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.2/plexus-compiler-api-2.2.jar (25 KB at 20.9 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.jar (151 KB at 84.7 KB/sec)
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.jar (206 KB at 92.5 KB/sec)
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 19 source files to C:\Danmar\DanmarDBF\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ DanmarDBF ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Danmar\DanmarDBF\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ DanmarDBF ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ DanmarDBF ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ DanmarDBF ---
+[INFO] Downloading: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[INFO] Downloaded: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar (203 KB at 270.1 KB/sec)
+[INFO] Building jar: C:\Danmar\DanmarDBF\target\DanmarDBF-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ DanmarDBF ---
+[INFO] Installing C:\Danmar\DanmarDBF\target\DanmarDBF-0.0.1-SNAPSHOT.jar to C:\Users\Silvina\.m2\repository\com\danmar\dbf\DanmarDBF\0.0.1-SNAPSHOT\DanmarDBF-0.0.1-SNAPSHOT.jar
+[INFO] Installing C:\Danmar\DanmarDBF\pom.xml to C:\Users\Silvina\.m2\repository\com\danmar\dbf\DanmarDBF\0.0.1-SNAPSHOT\DanmarDBF-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building DanmarWeb Maven Webapp 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ DanmarWeb ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ DanmarWeb ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Danmar\DanmarWeb\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ DanmarWeb ---
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 51 source files to C:\Danmar\DanmarWeb\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ DanmarWeb ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Danmar\DanmarWeb\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ DanmarWeb ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ DanmarWeb ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ DanmarWeb ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [DanmarWeb] in [C:\Danmar\DanmarWeb\target\DanmarWeb]
+[INFO] Processing war project
+[INFO] Copying webapp resources [C:\Danmar\DanmarWeb\src\main\webapp]
+[INFO] Webapp assembled in [4159 msecs]
+[INFO] Building war: C:\Danmar\DanmarWeb\target\DanmarWeb.war
+[INFO] WEB-INF\web.xml already added, skipping
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ DanmarWeb ---
+[INFO] Installing C:\Danmar\DanmarWeb\target\DanmarWeb.war to C:\Users\Silvina\.m2\repository\com\danmar\web\DanmarWeb\0.0.1-SNAPSHOT\DanmarWeb-0.0.1-SNAPSHOT.war
+[INFO] Installing C:\Danmar\DanmarWeb\pom.xml to C:\Users\Silvina\.m2\repository\com\danmar\web\DanmarWeb\0.0.1-SNAPSHOT\DanmarWeb-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Danmar Parent ...................................... SUCCESS [  2.152 s]
+[INFO] DanmarDBF .......................................... SUCCESS [ 23.234 s]
+[INFO] DanmarWeb Maven Webapp ............................. SUCCESS [ 17.172 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 42.861 s
+[INFO] Finished at: 2015-11-08T23:36:43+00:00
+[INFO] Final Memory: 27M/201M
+[INFO] ------------------------------------------------------------------------
