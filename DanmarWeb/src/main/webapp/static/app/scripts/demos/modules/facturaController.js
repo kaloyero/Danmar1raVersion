@@ -68,12 +68,30 @@ angular
 
         init();
 
-
+        function pruebaFocusFactura(event) {
+        	$("#productoGrid").css("border-style","none")
+        	$("#facturaGrid").css("border-style","dotted")
+        	console.log("FOCUS",event)
+        }
+        function pruebaFocusProductos(event) {
+        	
+        	var valor=false
+        	$("#productoGrid").css("border-style","dotted")
+        	$("#facturaGrid").css("border-style","none")
+        		//Le hago foco a algun elemento como para que pueda empezar a ir para abajo directamente con la flecha de abajo
+        	   angular.element(angular.element('.cell-col-0')[0]).trigger('focus');
+     
+        }
         /*Arranque del controlador*/
         function init() {
 
             $scope.onKeyCliente = showClientePopup;
+            $scope.guardarFactura = guardarFactura;
             $scope.borrarFila = borrarFila;
+            $scope.pruebaFocusProductos = pruebaFocusProductos;
+            $scope.pruebaFocusFactura = pruebaFocusFactura;
+
+
             
             //Variables que contendran la informacion para el header
             $scope.clienteSeleccionadoRazon;
@@ -330,7 +348,19 @@ angular
             return filtro;
         }
 
-
+    function guardarFactura(){
+    	var factura=new Object();
+    	factura.header=getHeader()
+    	console.log("FAC",factura)
+    }
+    //Se arma el objeto Header con la informacion.IMPORTANTE,los atributos tienen que coincidir con los atributos JAVA del objeto donde se mapearan los valores
+   function getHeader(){
+	   //Hay Datos que se van a crear en el Backend,como la fecha por ejemplo y el usuario
+    	var header=new Object();
+    	 header.idCliente=$scope.clienteSeleccionadoId;
+    	 header.descripcion=$scope.descripcion;
+    	 return header;
+    }
         //ArticuloService.query(null,function(data) {
 
         //var articulos=JSON.parse(angular.toJson(data))
